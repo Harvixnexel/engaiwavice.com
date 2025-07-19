@@ -1,559 +1,699 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Favicon -->
+  <link rel="icon" href="image/logo.png" type="image/png">
+</head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Wavice - AI Business Solutions</title>
+    <title>AI Wavice - Solusi Bisnis Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-in {
-        animation: fadeIn 1s ease-in-out forwards;
-    }
-
-    .solution-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-
-    .testimonial-slider {
-        scroll-behavior: smooth;
-    }
-
-    .mobile-menu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
-
-    .mobile-menu.open {
-        max-height: 500px;
-    }
-
-    /* Tambahan: Gradient Background */
-    .gradient-bg {
-        background: linear-gradient(135deg, #ffffff 0%, #007bff 100%);
-    }
-</style>
-</head>
-<body class="font-sans antialiased text-gray-800">
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 bg-white shadow-md transition-all duration-300">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <a href="#" class="flex items-center">
-                        <img src="image/logo.png" alt="Logo AIWavice" class="h-10 w-auto">
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Home</a>
-                    <a href="#about" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">About Me</a>
-                    <a href="#solutions" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Solutions</a>
-                    <a href="#testimonials" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Testimonials</a>
-                    <a href="#contact" class="text-gray-800 hover:text-blue-600 transition-colors duration-300 relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full">Contact</a>
-                </div>
-                
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-gray-800 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <div id="mobile-menu" class="mobile-menu md:hidden bg-white px-4">
-                <div class="flex flex-col space-y-4 py-4">
-                    <a href="#home" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">Home</a>
-                    <a href="#about" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">About Me</a>
-                    <a href="#solutions" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">Solutions</a>
-                    <a href="#testimonials" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">Testimonials</a>
-                    <a href="#contact" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-   <section id="home" class="gradient-bg pt-32 pb-16 md:pt-40 md:pb-24">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-
-        <!-- Text Section -->
-        <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-                Empower Your Business
-            </h1>
-            <p class="text-lg md:text-xl text-gray-700 mb-8">
-                AI driven solutions for faster growth and higher profits.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <div class="flex flex-wrap gap-4">
-                    <a href="#solutions" class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition duration-300 text-center font-medium shadow-md">
-                        View Our Solutions
-                    </a>
-                    <a href="mailto:aiwavice@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 text-center font-medium shadow-md">
-                        Contact Us
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Image Section -->
-        <div class="md:w-1/2 flex justify-center slide-in">
-                <div class="bg-white p-2 rounded-xl shadow-2xl">
-                    <img src="image/cct.jpg" alt="AI Wave Image" class="rounded-lg w-full max-w-lg h-auto object-cover">
-                </div>
-
-    </div>
-</section>
-
-    <!-- About Section -->
-   <section id="tentang" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center slide-in">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-indigo-100 rounded-2xl -z-10"></div>
-                        <img src="image/nx.png" alt="Nexel Profile" class="rounded-xl w-64 h-64 object-cover shadow-lg">
-                    </div>
-                </div>
-                <div class="md:w-2/3 md:pl-12 slide-in">
-                    <h2 class="text-3xl font-bold mb-2 text-gray-800">Harvix Nexel</h2>
-<p class="text-xl mb-4 text-gray-600">As an AI Business Strategist and AI Educator, I help businesses address recurring challenges such as:</p>  
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 text-indigo-600 mt-1 mr-2">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">Disorganized marketing team workflows</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 text-indigo-600 mt-1 mr-2">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">Traditional, costly, and inefficient tools</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 text-indigo-600 mt-1 mr-2">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">High revenue with low profit due to high operational costs</p>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 h-6 w-6 text-indigo-600 mt-1 mr-2">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <p class="text-gray-700">Customer churn caused by slow customer service and the absence of a clear ordering system</p>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Solutions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Innovative AI solutions tailored to your business needs</p>
-            </div>
-            
-            <!-- Solution 1 -->
-<div class="flex flex-col lg:flex-row mb-16">
-    <!-- Gambar (kiri di desktop) -->
-    <div class="lg:w-1/2 lg:pr-10 mb-8 lg:mb-0">
-        <div class="relative w-full h-64 lg:h-80 bg-gray-200 rounded-xl overflow-hidden shadow-md solution-card transition-all duration-300">
-            <div class="absolute inset-0">
-                <img src="image/marketing.jpg" alt="Solution 1" class="w-full h-full object-cover">
-            </div>
-        </div>
-    </div>
-
-    <!-- Konten teks (kanan di desktop) -->
-    <div class="lg:w-1/2 lg:pl-10 flex flex-col justify-center">
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Organize Your Marketing Team</h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-            Streamline your marketing team's workflow with a clear system that delivers maximum results at minimal cost. From creating high converting ads, producing daily content to <strong>boost brand awareness, building structured funnels,</strong> to crafting a smarter marketing plan up to 10x more budget-efficient.
-    </div>
-</div>
-            
-           <!-- Solution 2 -->
-<div class="flex flex-col lg:flex-row mb-16">
-    <!-- Gambar (kanan di desktop) -->
-    <div class="lg:w-1/2 lg:order-last lg:pl-10 mb-8 lg:mb-0">
-        <div class="relative w-full h-64 lg:h-80 bg-gray-200 rounded-xl overflow-hidden shadow-md solution-card transition-all duration-300">
-            <div class="absolute inset-0">
-                <img src="image/CS AI.jpg" alt="Solution 2" class="w-full h-full object-cover">
-            </div>
-        </div>
-    </div>
-
-    <!-- Konten teks (kiri di desktop) -->
-    <div class="lg:w-1/2 lg:pr-10 lg:order-first flex flex-col justify-center">
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Automated Customer Service</h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-            Implement AI powered customer service to respond to inquiries <strong>automatically and instantly</strong>. It's fast, efficient, and even capable of speaking multiple languages, drastically <strong>increasing your closing rate.
-    </div>
-</div>
-
-            <!-- Solution 3 -->
-<div class="flex flex-col lg:flex-row mb-16">
-    <!-- Gambar -->
-    <div class="lg:w-1/2 lg:pr-10 mb-8 lg:mb-0">
-        <div class="relative w-full h-64 lg:h-80 bg-gray-200 rounded-xl overflow-hidden shadow-md solution-card transition-all duration-300">
-            <div class="absolute inset-0">
-                <img src="image/app.jpeg" alt="Solution 3" class="w-full h-full object-cover">
-            </div>
-        </div>
-    </div>
-
-    <!-- Konten -->
-    <div class="lg:w-1/2 lg:pl-10 flex flex-col justify-center">
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Product Catalog Website & App</h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-            Provide your customers with a user friendly website or app, complete with <strong>visually engaging design</strong> and a product catalog that allows them to easily explore, choose, and purchase your products or services.
-    </div>
-</div>
-
-<!-- Solution 4 -->
-<div class="flex flex-col lg:flex-row">
-    <!-- Gambar -->
-    <div class="lg:w-1/2 lg:order-last lg:pl-10 mb-8 lg:mb-0">
-        <div class="relative w-full h-64 lg:h-80 bg-gray-200 rounded-xl overflow-hidden shadow-md solution-card transition-all duration-300">
-            <div class="absolute inset-0">
-                <img src="image/konsultan.jpg" alt="Solution 4" class="w-full h-full object-cover">
-            </div>
-        </div>
-    </div>
-
-    <!-- Konten -->
-    <div class="lg:w-1/2 lg:pr-10 lg:order-first flex flex-col justify-center">
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Helping Your Business Compete in the Digital Era</h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-            <strong>Get free consultations</strong> to help your business stay adaptive and competitive through digital transformation, automation, and the strategic use of artificial intelligence.
-    </div>
-</div>
-
-</div> 
-</section> 
-
-     <!-- Testimoni Section -->
-<section class="py-16" style="background-color: #4a6cf7;">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white mb-4">What Our Clients Say</h2>
-        </div>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl shadow-lg p-6 testimonial-card flex flex-col">
-                <div class="flex items-center mb-4">
-                    <img src="image/mm.jpeg" alt="Avatar 1" class="w-12 h-12 rounded-full object-cover mr-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-800">Brendashop</h4>
-                        <p class="text-sm text-gray-600">Onlineshop</p>
-                    </div>
-                </div>
-                <div class="mb-4 flex text-yellow-400">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-700 mb-4 flex-grow">"Finally, my customers can place orders quickly and conveniently thanks to the catalog feature integrated into the ordering system."</p>
-                <div class="mt-auto pt-4 border-t border-gray-200">
-                    <p class="text-sm text-gray-500">Done</p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg p-6 testimonial-card flex flex-col">
-                <div class="flex items-center mb-4">
-                    <img src="image/WhatsApp Image 2025-06-07 at 19.48.38.jpeg" alt="Avatar 2" class="w-12 h-12 rounded-full object-cover mr-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-800">Azam</h4>
-                        <p class="text-sm text-gray-600">Digital Counter</p>
-                    </div>
-                </div>
-                <div class="mb-4 flex text-yellow-400">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-700 mb-4 flex-grow">"Now the order flow is much more streamlined. With an integrated system, it's easier to attract more customers."</p>
-                <div class="mt-auto pt-4 border-t border-gray-200">
-                    <p class="text-sm text-gray-500">Done</p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-xl shadow-lg p-6 testimonial-card flex flex-col">
-                <div class="flex items-center mb-4">
-                    <img src="image/s.jpeg" alt="Avatar 3" class="w-12 h-12 rounded-full object-cover mr-4">
-                    <div>
-                        <h4 class="font-semibold text-gray-800">Salsa</h4>
-                        <p class="text-sm text-gray-600">Modern Snack Business</p>
-                    </div>
-                </div>
-                <div class="mb-4 flex text-yellow-400">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-<p class="text-gray-700 mb-4 flex-grow">
-  "My revenue didn't jump overnight, but my net margin did because I was able to 
-  <strong>cut several operational costs</strong> That made my business run faster and more efficiently."
-</p>
-                <div class="mt-auto pt-4 border-t border-gray-200">
-                    <p class="text-sm text-gray-500">Done</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Contact Section -->
-   <section id="contact" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Us</h2>
-                
-                <div class="space-y-6">
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 p-4 rounded-lg mr-5">
-                            <i class="fab fa-instagram text-blue-600 text-3xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-gray-900">Instagram</h4>
-                            <p class="text-gray-600 mb-1 text-base">@harvixnexel</p>
-                            <a href="https://www.instagram.com/harvixnexel?igsh=MTZ4Z3BhMXpreWplOQ==" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors duration-300 inline-flex items-center text-base">
-                                Message us <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 p-4 rounded-lg mr-5">
-                            <i class="fab fa-linkedin-in text-blue-600 text-3xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-gray-900">LinkedIn</h4>
-                            <p class="text-gray-600 mb-1 text-base">Harvix Nexel</p>
-                            <a href="https://www.linkedin.com/in/harvix-nexel-b1521a365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors duration-300 inline-flex items-center text-base">
-                                Connect with us <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 p-4 rounded-lg mr-5">
-                            <i class="fas fa-envelope text-blue-600 text-3xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-gray-900">Email</h4>
-                            <p class="text-gray-600 mb-1 text-base">aiwavice@gmail.com</p>
-                            <a href="mailto:aiwavice@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors duration-300 inline-flex items-center text-base">
-                                Send an email <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                
-                <div class="hidden md:block md:w-1/2">
-    <div class="relative w-full h-full min-h-80 bg-gray-200 rounded-xl overflow-hidden shadow-lg ml-8">
-        <img src="image/call.jpg" alt="Contact Image" class="absolute inset-0 w-full h-full object-cover">
-    </div>
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-   <footer class="bg-blue-900 text-white py-12">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between mb-10">
-            <div class="mb-8 md:mb-0">
-                <a href="#" class="text-2xl font-bold text-white mb-4 inline-block">AI Wavice</a>
-                <div class="flex space-x-6 mb-6">
-                    <a href="https://wa.me/6285254082750?text=Hello%20I%20would%20like%20to%20consult%20with%20you." target="_blank" class="text-white hover:text-blue-200 transition-colors duration-300">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                    </a>
-                    <a href="https://twitter.com/yourtwitterhandle" target="_blank" class="text-white hover:text-blue-200 transition-colors duration-300">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@ai.wave07?_t=ZS-8x0OaOZHgaA&_r=1" target="_blank" class="text-white hover:text-blue-200 transition-colors duration-300">
-                        <i class="fab fa-tiktok text-xl"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="mb-8 md:mb-0">
-    <h3 class="text-2xl font-bold mb-5">Navigation</h3>
-    <ul class="space-y-3">
-        <li><a href="#home" class="text-white text-lg hover:text-blue-200 transition-colors duration-300">Home</a></li>
-        <li><a href="#about" class="text-white text-lg hover:text-blue-200 transition-colors duration-300">About Me</a></li>
-        <li><a href="#solutions" class="text-white text-lg hover:text-blue-200 transition-colors duration-300">Solutions</a></li>
-        <li><a href="#testimonials" class="text-white text-lg hover:text-blue-200 transition-colors duration-300">Testimonials</a></li>
-        <li><a href="#contact" class="text-white text-lg hover:text-blue-200 transition-colors duration-300">Contact Us</a></li>
-    </ul>
-</div>
-            <div>
-                <h3 class="text-lg font-bold mb-4">Community</h3>
-                <div class="flex space-x-6 items-center">
-                    <a href="https://discord.gg/65rZWCAy" target="_blank" class="text-white hover:text-blue-200 transition-colors duration-300">
-                        <i class="fab fa-discord text-xl"></i>
-                    </a>
-                    <a href="https://www.notion.so/Prompt-AI-untuk-Chatbot-200a3b10c09780369b37fa4e1157054a?source=copy_link" target="_blank" class="text-white hover:text-blue-200 transition-colors duration-300">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" class="h-6 w-6">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-            
-            <div class="border-t border-blue-800 pt-6 text-center sm:text-left">
-        <div class="text-center lg:text-center">
-            © 2025 AI Wavice. All rights reserved.
-        </div>
-    </div>
-</footer>
-
-
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    mobileMenu.classList.remove('open');
-                    
-                    // Calculate the scroll position (accounting for the fixed navbar)
-                    const navbarHeight = document.getElementById('navbar').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Testimonial slider functionality
-        const slider = document.getElementById('slider');
-        const prevBtn = document.getElementById('prev-testimonial');
-        const nextBtn = document.getElementById('next-testimonial');
-        const indicators = document.querySelectorAll('.indicator');
-        
-        let currentSlide = 0;
-        const totalSlides = 3; // Number of testimonial slides
-        const sliderWidth = slider.scrollWidth;
-        
-        function updateSlider() {
-            const slideWidth = slider.clientWidth / 3; // For mobile, show 1 slide; desktop shows 3
-            slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-            
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.remove('bg-blue-200');
-                    indicator.classList.add('bg-blue-600');
-                } else {
-                    indicator.classList.remove('bg-blue-600');
-                    indicator.classList.add('bg-blue-200');
-                }
-            });
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: white;
         }
         
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        });
+        .navbar-blur {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
         
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-        });
+        .hero-section {
+            background-image: url('image/hero\ section.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
         
-        // Initialize indicators
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentSlide = index;
-                updateSlider();
-            });
+        .card-hover:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+            opacity: 0;
+        }
+        
+        .accordion-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-icon.open {
+            transform: rotate(90deg);
+        }
+        
+        /* Custom bullet points */
+        .custom-bullet {
+            position: relative;
+            padding-left: 1.5em;
+        }
+        
+        .custom-bullet::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3ABEF9;
+        }
+        
+        .gold-bullet::before {
+            color: #FFD700;
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Card fade animation for mobile */
+        @media (max-width: 768px) {
+            .fade-up {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeUp 0.6s forwards;
+            }
             
-            if (index === 0) {
-                indicator.classList.add('bg-blue-600');
+            @keyframes fadeUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
+            
+            .fade-up:nth-child(1) { animation-delay: 0.1s; }
+            .fade-up:nth-child(2) { animation-delay: 0.2s; }
+            .fade-up:nth-child(3) { animation-delay: 0.3s; }
+            .fade-up:nth-child(4) { animation-delay: 0.4s; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full navbar-blur z-50 py-4 px-6 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="image/Navi.png" alt="AI Wavice Logo" class="square-full h-10 w-10 md:h-12 md:w-12">
+            <a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 font-medium">Beranda</a>
+                <a href="#solutions" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 font-medium">Solusi</a>
+                <a href="#testimonials" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 font-medium">Testimoni</a>
+                <a href="#pricing" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 font-medium">Harga</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-[rgba(0,0,0,0.8)] backdrop-blur-md z-50 p-6 pt-16">
+        <button id="close-menu" class="absolute top-4 right-4 text-white">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        
+        <div class="flex flex-col space-y-6 mt-8">
+            <a href="#home" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 text-lg">Beranda</a>
+            <a href="#solutions" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 text-lg">Solusi</a>
+            <a href="#testimonials" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 text-lg">Testimoni</a>
+            <a href="#pricing" class="text-white hover:text-[#3ABEF9] transition-colors duration-200 text-lg">Harga</a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-24 pb-16 md:pt-32 md:pb-24" style="background-image: url('image/hero\ section.png');">
+    <div class="hero-overlay py-12 md:py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-[6vw] md:text-5xl font-bold mb-4 text-white">
+    <span class="block mb-2">MULAI TURUNKAN BIAYA </span>
+    <span class="block">UNTUK TINGKATKAN PROFIT DARI BISNISMU</span>
+</h1>
+            <p class="text-lg md:text-xl mb-8 text-white">Dengan Bangun sistem Digital yang hemat Cost Operasional</p>
+            <a href="https://wa.me/6285254082750?text=Saya%20tertarik%20dengan%20solusi%20AI%20Wavice" target="_blank" class="fade-in inline-block bg-[#3ABEF9] hover:bg-[#2da8e0] text-black font-bold py-3 px-8 rounded-full transition-colors duration-300">
+                Ambil Solusinya
+            </a>
+        </div>
+    </div>
+</section>
+    
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-16 px-4 md:px-8 bg-black">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Solusi yang Kami tawarkan</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">Kami Tidak memberi solusi yang canggih tapi yang Membantu & bersifat end to end</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-black rounded-xl p-6 shadow-[0_4px_20px_rgba(255,255,255,0.1)] card-hover fade-up">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <img src="image/konsul.png" alt="Private Konsultasi" class="rounded-md h-12 w-12 mr-4 shrink-0">
+                        <h3 class="text-xl font-bold text-white">Private Konsultasi</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Kami melihat kondisi Bisnis anda dan menggali masalah atau kebutuhan yang ada, untuk kami berikan solusi yang tepat</p>
+                    <div class="mt-auto">
+                        <p class="text-[#3ABEF9] font-medium mb-3">Manfaat</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="custom-bullet">Bisnis anda mendapatkan arahan untuk bisa jalan di era AI</li>
+                            <li class="custom-bullet">Anda bisa tau apa yang kurang dibisnis anda</li>
+                            <li class="custom-bullet">Implementasi bisa sesuai karena kita bantu cari solusi yang tepat</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-black rounded-xl p-6 shadow-[0_4px_20px_rgba(255,255,255,0.1)] card-hover fade-up">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <img src="image/marketing.png" alt="Private Konsultasi" class="rounded-md h-12 w-12 mr-4 shrink-0">
+                        <h3 class="text-xl font-bold text-white">AI Marketing</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Kami bantu bangun ekosistem devisi Marketing yang berjalan dengan efisien dan hemat budget dalam meningkatkan Omzet</p>
+                    <div class="mt-auto">
+                        <p class="text-[#3ABEF9] font-medium mb-3">Manfaat</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="custom-bullet">Mendapatkan Strategy cara memanfaatkan AI dalam Pemasaran</li>
+                            <li class="custom-bullet">Mengurangi Pekerjaan repetitif dengan AI Automation</li>
+                            <li class="custom-bullet">Meningkatkan value marketing dengan Bantuan AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-black rounded-xl p-6 shadow-[0_4px_20px_rgba(255,255,255,0.1)] card-hover fade-up">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                         <img src="image/operator.png" alt="Private Konsultasi" class="rounded-md h-12 w-12 mr-4 shrink-0">
+                        <h3 class="text-xl font-bold text-white">Costomer Services AI</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Balas chat ratusan pelanggan secara otomatis, 24 jam nonstop, dengan respon yang bisa memahami kebutuhan pelanggan,dan selalu cepat untuk ningkatin closing</p>
+                    <div class="mt-auto">
+                        <p class="text-[#3ABEF9] font-medium mb-3">Manfaat</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="custom-bullet">Gaji dibawah Rp 100.000/bulan</li>
+                            <li class="custom-bullet">Kerja 24 jam dan fast respon</li>
+                            <li class="custom-bullet">Bantu pelanggan lebih puas dan naikin rate closing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-black rounded-xl p-6 shadow-[0_4px_20px_rgba(255,255,255,0.1)] card-hover fade-up">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                         <img src="image/Funnel.png" alt="Private Konsultasi" class="rounded-md h-12 w-12 mr-4 shrink-0">
+                        <h3 class="text-xl font-bold text-white">Sistem order</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Kami bangun Web & landing page yang dirancang khusus bukan untuk tampilan semata, tapi untuk bantu naikkan penjualan secara sistematis</p>
+                    <div class="mt-auto">
+                        <p class="text-[#3ABEF9] font-medium mb-3">Manfaat</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="custom-bullet">Punya alur pemesanan yang lebih rapi dan terarah</li>
+                            <li class="custom-bullet">Punya identitas bisnis yang kuat dan dipercaya pelanggan</li>
+                            <li class="custom-bullet">Website yang dibuat untuk naikin sales,bukan jadi pajangan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 px-4 md:px-8 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Apa Kata Mereka</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Dengar langsung dari para owner yang telah menggunakan solusi kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-black rounded-xl p-6 border border-white border-opacity-20 fade-up">
+                    <div class="flex items-center mb-4">
+                        <img src="image/WhatsApp Image 2025-06-07 at 19.48.38.jpeg" alt="Azam" class="rounded-full h-12 w-12 border border-gray-500">
+                        <div class="ml-4">
+                            <h4 class="text-white font-medium">Azam</h4>
+                            <p class="text-gray-400 text-sm font-bold">Konter digital</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Biasanya kalau bikin landing page itu cuma jadi katalog. Tapi sistem yang dibangun tim AI Wavice ini beda semuanya diatur dari konten sampai cara balas chat otomatis. Hasilnya, closing naik tanpa harus nambah tim."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-black rounded-xl p-6 border border-white border-opacity-20 fade-up">
+                    <div class="flex items-center mb-4">
+                        <img src="image/mm.jpeg" alt="Melda" class="rounded-full h-12 w-12 border border-gray-500">
+                        <div class="ml-4">
+                            <h4 class="text-white font-medium">Melda</h4>
+                            <p class="text-gray-400 text-sm font-bold">OnlineShop</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Saya nggak ngerti teknologi, tapi ternyata sistemnya gampang dipakai dan langsung jalan. Chat dari pelanggan sekarang dibalas otomatis, order juga lebih teratur. Nggak nyangka bisa serapi ini tanpa tambah karyawan."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-black rounded-xl p-6 border border-white border-opacity-20 fade-up">
+                    <div class="flex items-center mb-4">
+                        <img src="image/s.jpeg" alt="Salsa" class="rounded-full h-12 w-12 border border-gray-500">
+                        <div class="ml-4">
+                            <h4 class="text-white font-medium">Salsa</h4>
+                            <p class="text-gray-400 text-sm font-bold">Usaha jajanan kekinian</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Dulu kami jualan cuma lewat chat manual, balesnya lama dan kadang pelanggan hilang. Sekarang sistemnya udah otomatis dari promosi, balas chat, sampai order masuk semua lancar. Hemat waktu, hasil lebih banyak"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 px-4 md:px-8 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Harga & Benefit</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Package 1 -->
+                <div class="bg-black rounded-xl p-6 border border-white border-opacity-20 shadow-[0_4px_20px_rgba(255,255,255,0.1)]">
+                    <div class="flex flex-col h-full">
+                        <h3 class="text-xl font-bold text-white mb-2">Customer Services AI</h3>
+                        <p class="text-white text-lg font-medium mb-1">Rp 800.000/Setup</p>
+                        <div class="h-px bg-white bg-opacity-20 my-1"></div>
+                        
+                        <ul class="space-y-3 mb-6">
+                            <li class="custom-bullet">Free Private Konsultasi</li>
+                            <li class="custom-bullet">Sistem Costomer Services</li>
+                            <li class="custom-bullet">Sistem Teknikal Support</li>
+                            <li class="custom-bullet">Siap pakai 1 bulan</li>
+                            <li class="custom-bullet">Kami bantu tata alur masuk costomer hingga closing</li>
+                            <li class="custom-bullet">Sistem otomatis follow up pelanggan</li>
+                            <li class="custom-bullet">Sistem notif pesanan</li>
+                            <li class="custom-bullet">Mendapatkan katalog Online/Landing page siap pakai</li>
+                        </ul>
+                        
+                        <div class="mt-auto">
+                            <p class="text-gray-400 text-sm mb-4">Noted:Diluar biaya Tools namun kami akan bantu cari harga yang bisa kurangi cost bisnis anda</p>
+                            <a href="https://wa.me/6285254082750?text=Saya%20tertarik%20dengan%20paket%20Customer%20Services%20AI" target="_blank" class="inline-block bg-[#3ABEF9] hover:bg-[#2da8e0] text-black font-medium py-2 px-6 rounded-full transition-colors duration-300 w-full text-center">
+                                Mau Ini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 2 (Top) -->
+                <div class="bg-black rounded-xl p-6 border border-[#3ABEF9] shadow-[0_4px_20px_rgba(58,190,249,0.2)] relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#3ABEF9] text-black font-bold px-4 py-1 rounded-full text-xs">
+                        TOP
+                    </div>
+                    <div class="flex flex-col h-full">
+                        <h3 class="text-xl font-bold text-white mb-2">Smart System</h3>
+                        <p class="text-[#3ABEF9] text-lg font-medium mb-1">Mulai Rp 1.200.000/Setup</p>
+                        <div class="h-px bg-white bg-opacity-20 my-1"></div>
+                        
+                        <ul class="space-y-3 mb-6">
+                            <li class="custom-bullet">Free Private Konsultasi</li>
+                            <li class="custom-bullet">Memiliki sistem Marketing berbasis AI</li>
+                            <li class="custom-bullet">Kami beri panduan Marketing di era AI</li>
+                            <li class="custom-bullet">Kami bantu buatkan Funneling</li>
+                            <li class="custom-bullet">Costomer Services/Teknikal Support berbasis AI</li>
+                            <li class="custom-bullet">Website bisnis</li>
+                            <li class="custom-bullet">Free domain Web.ID dan hosting</li>
+                            <li class="custom-bullet">Kami buatkan asisten pribadi untuk bantu bisnis kamu</li>
+                        </ul>
+                        
+                        <div class="mt-auto">
+                            <p class="text-gray-400 text-sm mb-4">Noted:Biaya bisa lebih fleksibel dan sudah teramasuk biaya tools</p>
+                            <a href="https://wa.me/6285254082750?text=Saya%20tertarik%20dengan%20paket%20Full%20Setup" target="_blank" class="inline-block bg-[#3ABEF9] hover:bg-[#2da8e0] text-black font-medium py-2 px-6 rounded-full transition-colors duration-300 w-full text-center">
+                                Mau Ini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="bg-black rounded-xl p-6 border border-white border-opacity-20 shadow-[0_4px_20px_rgba(255,255,255,0.1)]">
+                    <div class="flex flex-col h-full">
+                        <h3 class="text-xl font-bold text-white mb-2">AI Agent Marketing</h3>
+                        <p class="text-white text-lg font-medium mb-1">Mulai Rp 500.000/Setup</p>
+                        <div class="h-px bg-white bg-opacity-20 my-1"></div>
+                        
+                        <ul class="space-y-3 mb-6">
+                            <li class="custom-bullet">Free Private Konsultasi</li>
+                            <li class="custom-bullet">Dibuatkan sistem marketing berbasis AI</li>
+                            <li class="custom-bullet">Kami beri panduan cara Marketing di era AI</li>
+                            <li class="custom-bullet">Kami bantu buatkan Funneling</li>
+                        </ul>
+                        
+                        <div class="mt-auto">
+                            <p class="text-gray-400 text-sm mb-4">Noted:Biaya bisa lebih fleksibel dan sudah teramasuk biaya tools</p>
+                            <a href="https://wa.me/6285254082750?text=Saya%20tertarik%20dengan%20paket%20AI%20Marketing" target="_blank" class="inline-block bg-[#3ABEF9] hover:bg-[#2da8e0] text-black font-medium py-2 px-6 rounded-full transition-colors duration-300 w-full text-center">
+                                Mau Ini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 4 -->
+                <div class="bg-black rounded-xl p-6 border border-white border-opacity-20 shadow-[0_4px_20px_rgba(255,255,255,0.1)]">
+                    <div class="flex flex-col h-full">
+                        <h3 class="text-xl font-bold text-white mb-2">Pemeliharaan</h3>
+                        <p class="text-white text-lg font-medium mb-1">Mulai Rp 300.000/Maintance</p>
+                        <div class="h-px bg-white bg-opacity-20 my-1"></div>
+                        
+                        <ul class="space-y-3 mb-6">
+                            <li class="custom-bullet">Free penjelasan secara lengkap</li>
+                            <li class="custom-bullet">Melakukan pengecekan secara menyeluruh</li>
+                            <li class="custom-bullet">Melakukan pemeliharaan dan juga perbaikan</li>
+                        </ul>
+                        
+                        <div class="mt-auto">
+                            <p class="text-gray-400 text-sm mb-4">Noted:Biaya bisa lebih fleksibel dan sudah teramasuk biaya tools</p>
+                            <a href="https://wa.me/6285254082750?text=Saya%20tertarik%20dengan%20paket%20Pemeliharaan" target="_blank" class="inline-block bg-[#3ABEF9] hover:bg-[#2da8e0] text-black font-medium py-2 px-6 rounded-full transition-colors duration-300 w-full text-center">
+                                Mau Ini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- FAQ Section -->
+<section class="py-16 px-4 md:px-8 bg-black">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Pertanyaan Umum</h2>
+
+    <div class="space-y-4">
+      <!-- FAQ Item 1 -->
+      <div class="bg-black bg-opacity-30 backdrop-blur-md rounded-xl border border-white border-opacity-20 p-6">
+        <button class="accordion-toggle w-full flex justify-between items-center focus:outline-none">
+          <span class="text-gray-200 md:text-white text-lg font-semibold text-left">
+            Kalau saya gak ngerti cara setting AI-nya, bisa tetap jalan?
+          </span>
+          <svg class="accordion-icon w-8 h-8 md:w-6 md:h-6 text-white transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <p class="text-white mt-4 leading-relaxed">
+            Bisa. Sistem sudah disiapkan dan ditraining khusus sesuai kebutuhan Anda. Anda tinggal pakai, tanpa perlu utak-atik teknis.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="bg-black bg-opacity-30 backdrop-blur-md rounded-xl border border-white border-opacity-20 p-6">
+        <button class="accordion-toggle w-full flex justify-between items-center focus:outline-none">
+          <span class="text-gray-200 md:text-white text-lg font-semibold text-left">
+            Saya gak ngerti tools AI, apakah nanti bisa tetap jalanin sistemnya?
+          </span>
+          <svg class="accordion-icon w-8 h-8 md:w-6 md:h-6 text-white transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <p class="text-white mt-4 leading-relaxed">
+            Bisa. Paket ini sudah termasuk panduan praktis dan contoh tools yang gampang dipakai. Semua diarahkan step by step.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="bg-black bg-opacity-30 backdrop-blur-md rounded-xl border border-white border-opacity-20 p-6">
+        <button class="accordion-toggle w-full flex justify-between items-center focus:outline-none">
+          <span class="text-gray-200 md:text-white text-lg font-semibold text-left">
+            Apakah saya harus ngerti cara pakai semua fitur itu?
+          </span>
+          <svg class="accordion-icon w-8 h-8 md:w-6 md:h-6 text-white transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <p class="text-white mt-4 leading-relaxed">
+            Tidak harus. Semua akan kami training dengan bahasa sederhana dan panduan praktis. Anda tinggal jalankan dan awasi hasilnya.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="bg-black bg-opacity-30 backdrop-blur-md rounded-xl border border-white border-opacity-20 p-6">
+        <button class="accordion-toggle w-full flex justify-between items-center focus:outline-none">
+          <span class="text-gray-200 md:text-white text-lg font-semibold text-left">
+            Kalau saya gak paham teknis, apakah bisa minta bantuan update sistem tanpa utak-atik sendiri?
+          </span>
+          <svg class="accordion-icon w-8 h-8 md:w-6 md:h-6 text-white transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <p class="text-white mt-4 leading-relaxed">
+            Ya, bisa. Paket pemeliharaan dirancang khusus untuk bantu Anda update, revisi, atau tambah fitur tanpa perlu mengerti proses teknisnya. Cukup jelaskan kebutuhannya, tim kami yang atur semuanya.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="bg-black bg-opacity-30 backdrop-blur-md rounded-xl border border-white border-opacity-20 p-6">
+        <button class="accordion-toggle w-full flex justify-between items-center focus:outline-none">
+          <span class="text-gray-200 md:text-white text-lg font-semibold text-left">
+            Saya cuma ngerti pakai sistemnya aja, kalau ada error atau perubahan harus gimana?
+          </span>
+          <svg class="accordion-icon w-8 h-8 md:w-6 md:h-6 text-white transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <div class="accordion-content">
+          <p class="text-white mt-4 leading-relaxed">
+            Anda tinggal hubungi kami. Di paket pemeliharaan, Anda akan dibantu jika ada error, perubahan alur kerja, atau tambahan fitur baru. Kami tangani dari sisi sistem, Anda cukup fokus menjalankan bisnis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    <!-- Footer -->
+    <footer class="bg-[#0D1117] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between mb-10">
+                <!-- Brand + Sosial Media -->
+                <div class="mb-8 md:mb-0">
+                    <!-- AI Wavice Text -->
+                    <a href="#" class="text-2xl font-bold text-white mb-4 inline-block">AI Wavice</a>
+                    
+                    <!-- Sosmed Icons (rapat seperti Community) -->
+                    <div class="flex space-x-6 mt-2">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/6285254082750?text=Saya%20mau%20konsultasi%20kak" target="_blank" class="hover:text-green-400 transition-colors duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/ai.waveid" target="_blank" class="hover:text-pink-400 transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@ai.wave07" target="_blank" class="hover:text-blue-200 transition-colors duration-300">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Navigation</h3>
+                    <ul class="flex flex-col space-y-2">
+                        <a href="#home" class="hover:text-[#3ABEF9] transition-colors duration-200">Beranda</a>
+                        <a href="#solutions" class="hover:text-[#3ABEF9] transition-colors duration-200">Solusi</a>
+                        <a href="#testimonials" class="hover:text-[#3ABEF9] transition-colors duration-200">Testimoni</a>
+                        <a href="#pricing" class="hover:text-[#3ABEF9] transition-colors duration-200">Harga</a>
+                    </ul>
+                </div>
+                
+                <!-- Community -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Community</h3>
+                    <div class="flex space-x-6 items-center">
+                        <a href="https://discord.gg/65rZWCAy" target="_blank" class="text-gray-400 hover:text-[#3ABEF9] transition-colors duration-300">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                        <a href="https://www.notion.so/Prompt-AI-untuk-Chatbot-200a3b10c09780369b37fa4e1157054a?source=copy_link" target="_blank" class="text-gray-400 hover:text-[#3ABEF9] transition-colors duration-300">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" class="h-6 w-6">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-700 pt-6 text-center sm:text-left">
+                <div class="text-center lg:text-center text-gray-500 text-sm">
+                    © 2025 AI Wavice. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuButton = document.getElementById('close-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
         });
         
-        // Sticky navbar with shadow on scroll
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Accordion functionality
+        const accordionToggles = document.querySelectorAll('.accordion-toggle');
+        
+        accordionToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('.accordion-icon');
+                
+                // Close all other accordion items
+                accordionToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        const otherContent = otherToggle.nextElementSibling;
+                        const otherIcon = otherToggle.querySelector('.accordion-icon');
+                        
+                        otherContent.classList.remove('open');
+                        otherIcon.classList.remove('open');
+                    }
+                });
+                
+                // Toggle current item
+                content.classList.toggle('open');
+                icon.classList.toggle('open');
+            });
+        });
+        
+        // Navbar scroll behavior
+        let lastScroll = 0;
         const navbar = document.getElementById('navbar');
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('shadow-lg');
-                navbar.classList.add('bg-opacity-90');
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.classList.remove('bg-opacity-90');
+            const currentScroll = window.pageYOffset;
+            
+            if (window.innerWidth < 768) { // Mobile behavior
+                if (currentScroll <= 0) {
+                    navbar.classList.remove('hidden');
+                }
+                
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    // Scrolling down
+                    navbar.classList.add('hidden');
+                } else if (currentScroll < lastScroll) {
+                    // Scrolling up
+                    navbar.classList.remove('hidden');
+                }
             }
+            
+            lastScroll = currentScroll;
         });
         
-        // Intersection Observer for fade-in animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
                 }
             });
-        }, {
-            threshold: 0.1
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-[#3ABEF9]');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-[#3ABEF9]');
+                }
+            });
         });
         
-        fadeElements.forEach(element => {
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            observer.observe(element);
-        });
+        // Initialize fade-up animations for mobile
+        if (window.innerWidth < 768) {
+            const fadeUpElements = document.querySelectorAll('.fade-up');
+            fadeUpElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+            });
+            
+            // Trigger animations when elements come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeUp 0.6s forwards';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeUpElements.forEach(el => observer.observe(el));
+        }
     </script>
 </body>
 </html>
